@@ -19,9 +19,12 @@ namespace ASP.NET_MVC_5_exercise.Controllers
 		// 
 		// GET: /HelloWorld/Welcome/ 
 
-		public string Welcome(string name, int id = 0)
+		public ActionResult Welcome(string name, int num = 0)
 		{
-			return HttpUtility.HtmlEncode($"Hello {name}, number is: {id}");
+			ViewBag.Message = "Hello " + name;
+			ViewBag.NumTimes = num;
+
+			return View();
 		}
 	}
 }
